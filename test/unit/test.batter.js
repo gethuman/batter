@@ -27,9 +27,10 @@ describe('UNIT ' + name, function () {
         });
 
         it('should set defaults', function () {
-            var opts = { rootDir: 'foo', require: 'choo' };
+            var opts = { rootDir: 'foo', targetDir: 'blah', require: 'choo' };
             var expected = {
                 rootDir: 'foo',
+                targetDir: 'blah',
                 require: 'choo',
                 unitTestCode: 'test/unit/**/*.js',
                 unitTargetCode: 'lib/**/*.js',

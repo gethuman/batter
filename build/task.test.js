@@ -6,16 +6,20 @@
  */
 var mocha       = require('gulp-mocha');
 var istanbul    = require('gulp-istanbul');
-var taste       = require('taste');
 
 module.exports = function (gulp, opts) {
     var reporter = opts.reporter || 'progress';
     var useTestCoverage = opts.cov;
+    var taste = opts.taste;
+
+    if (!taste) {
+        throw new Error('Pass in taste to batter.whip');
+    }
 
     // initialize taste so we can use it with our tests
     taste.firstBite({
-        require: opts.require,
-        rootDir: opts.rootDir
+        require:    opts.require,
+        targetDir:  opts.targetDir
     });
 
     return function (done) {
