@@ -5,9 +5,9 @@
  * Simple watch implementation
  */
 module.exports = function (gulp, opts) {
-    var watchCode = opts.watchCode || ['lib/**/*.js', 'test/unit/**/*.js'];
+    var watchCode = opts.watchCode || [].concat(opts.unitTestCode, opts.unitTargetCode);
 
     return function () {
-        gulp.watch(watchCode, ['jshint', 'test']);
+        gulp.watch(watchCode, ['lint', 'test']);
     };
 };

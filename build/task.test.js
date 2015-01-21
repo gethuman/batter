@@ -6,31 +6,25 @@
  */
 var mocha       = require('gulp-mocha');
 var istanbul    = require('gulp-istanbul');
+var taste       = require('taste');
 
 module.exports = function (gulp, opts) {
     var reporter = opts.reporter || 'progress';
-    var testCode = opts.unitTestCode || 'test/unit/**/*.js';
-    var targetCode = opts.unitTargetCode || 'lib/**/*.js';
-    var testDir = opts.testDir || '..';
-    var files = opts.files;
-    var isCoverage = opts.cov;
+    var useTestCoverage = opts.cov;
 
-    if (files) {
-        testCode = 'test/unit/';
-        if (files.substring(files.length - 3) === '.js') {
-            testCode += 'test.' + files;
-        }
-        else {
-            testCode += files + '/**/*.js';
-        }
-    }
+    // initialize taste so we can use it with our tests
+    taste.firstBite({
+        require: opts.require,
+        rootDir: opts.rootDir
+    });
 
     return function (done) {
-        if (isCoverage) {
-            gulp.src(targetCode)
+        if (useTestCoverage) {
+            gulp.src(opts.unitTargetCode)
                 .pipe(istanbul())
+                .pipe(istanbul.hookRequire())
                 .on('finish', function () {
-                    gulp.src(testCode)
+                    gulp.src(opts.unitTestCode)
                         .pipe(mocha({
                             growl: true,
                             ui: 'bdd',
@@ -38,14 +32,14 @@ module.exports = function (gulp, opts) {
                             timeout: 5000
                         }))
                         .pipe(istanbul.writeReports({
-                            dir: testDir + '/coverage',
-                            reportOpts: { dir: testDir + '/coverage' }
+                            dir: opts.testDir + '/coverage',
+                            reportOpts: { dir: opts.testDir + '/coverage' }
                         }))
                         .on('end', done);
                 });
         }
         else {
-            gulp.src(testCode)
+            gulp.src(opts.unitTestCode)
                 .pipe(mocha({
                     growl: true,
                     ui: 'bdd',

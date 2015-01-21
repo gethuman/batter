@@ -5,14 +5,10 @@
  * Build file for Pancakes
  */
 var gulp    = require('gulp');
-var taste   = require('taste');
+var batter  = require('./lib/batter');
 
-taste.init({
-    gulp:       gulp,
-    rootDir:    __dirname + '/lib',
-    loadModule: require
+batter.whip(gulp, {
+    require:        require,
+    rootDir:        __dirname,
+    unitTargetCode: ['lib/*.js', 'build/*.js']
 });
-
-gulp.task('default', ['jshint', 'test']);
-
-
