@@ -1,0 +1,27 @@
+{
+  "name": "batter",
+  "version": "0.0.1",
+  "description": "JavaScript based templating engine for React",
+  "main": "lib/batter.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gethuman/batter.git"
+  },
+  "keywords": [
+    "javascript",
+    "template"
+  ],
+  "author": "Jeff Whelpley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gethuman/batter/issues"
+  },
+  "homepage": "https://github.com/gethuman/batter",
+  "dependencies": {
+    "gulp": "^3.8.10",
+    "gulp-istanbul": "^0.5.0",
+    "gulp-jshint": "^1.9.0",
+    "gulp-mocha": "^2.0.0"
+  },
+  "devDependencies": {}
+}
