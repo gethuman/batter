@@ -8,10 +8,7 @@ var gulp    = require('gulp');
 var taste   = require('taste');
 var batter  = require('./lib/batter');
 
-batter.whip(gulp, {
-    taste:          taste,
-    require:        require,
-    rootDir:        __dirname,
+batter.whip(gulp, taste, {
     targetDir:      __dirname,
     unitTargetCode: ['lib/*.js', 'build/*.js']
 });

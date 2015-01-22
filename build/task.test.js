@@ -17,10 +17,7 @@ module.exports = function (gulp, opts) {
     }
 
     // initialize taste so we can use it with our tests
-    taste.firstBite({
-        require:    opts.require,
-        targetDir:  opts.targetDir
-    });
+    taste.firstBite(opts.targetDir);
 
     return function (done) {
         if (useTestCoverage) {

@@ -10,22 +10,6 @@ var batter  = taste.target(name);
 
 describe('UNIT ' + name, function () {
     describe('getOptions()', function () {
-        it('should throw an error if no rootDir', function () {
-            var fn = function () {
-                batter.getOptions({});
-            };
-
-            fn.should.throw('batter must be whipped with rootDir!');
-        });
-
-        it('should throw an error if no require', function () {
-            var fn = function () {
-                batter.getOptions({ rootDir: 'blah' });
-            };
-
-            fn.should.throw('batter must be whipped with require!');
-        });
-
         it('should set defaults', function () {
             var opts = { rootDir: 'foo', targetDir: 'blah', require: 'choo' };
             var expected = {
