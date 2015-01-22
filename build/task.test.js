@@ -19,13 +19,14 @@ module.exports = function (gulp, opts) {
     // initialize taste so we can use it with our tests
     taste.firstBite(opts.targetDir);
 
-    return function (done) {
+    // function for running one of the tests
+    function runTest(targetCode, testCode, done) {
         if (useTestCoverage) {
-            gulp.src(opts.unitTargetCode)
+            gulp.src(targetCode)
                 .pipe(istanbul())
                 .pipe(istanbul.hookRequire())
                 .on('finish', function () {
-                    gulp.src(opts.unitTestCode)
+                    gulp.src(testCode)
                         .pipe(mocha({
                             growl: true,
                             ui: 'bdd',
@@ -40,7 +41,7 @@ module.exports = function (gulp, opts) {
                 });
         }
         else {
-            gulp.src(opts.unitTestCode)
+            gulp.src(testCode)
                 .pipe(mocha({
                     growl: true,
                     ui: 'bdd',
@@ -49,5 +50,16 @@ module.exports = function (gulp, opts) {
                 }))
                 .on('end', done);
         }
+    }
+
+    return {
+        integration:  function (done) {
+            runTest(opts.intTargetCode, opts.intTestCode, done);
+        },
+        'default': function (done) {
+            runTest(opts.unitTargetCode, opts.unitTestCode, done);
+        }
     };
 };
+
+
