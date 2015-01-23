@@ -8,7 +8,8 @@ var jshint      = require('gulp-jshint');
 var jshintOpts  = require('./opts.jshint');
 
 module.exports = function (gulp, opts) {
-    var lintCode = opts.lintCode || [].concat(opts.unitTestCode, opts.unitTargetCode);
+    var commonCode = ['build/*.js'];
+    var lintCode = opts.lintCode || commonCode.concat(opts.unitTestCode, opts.unitTargetCode);
 
     return function () {
         return gulp.src(lintCode)

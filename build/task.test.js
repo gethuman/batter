@@ -56,7 +56,7 @@ module.exports = function (gulp, opts) {
         integration:  function (done) {
             runTest(opts.intTargetCode, opts.intTestCode, done);
         },
-        'default': function (done) {
+        '': function (done) {
             runTest(opts.unitTargetCode, opts.unitTestCode, done);
         }
     };
