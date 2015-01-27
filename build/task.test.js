@@ -16,6 +16,11 @@ module.exports = function (gulp, opts) {
         throw new Error('Pass in taste to batter.whip');
     }
 
+    opts.intTestCode = opts.intTestCode || 'test/integration/**/*.js';
+    opts.apiTestCode = opts.apiTestCode || 'test/api/**/*.js';
+    opts.extTestCode = opts.extTestCode || 'test/external/**/*.js';
+    opts.intTargetCode = opts.intTargetCode || 'lib/**/*.js';
+
     // initialize taste so we can use it with our tests
     taste.firstBite(opts.targetDir);
 
@@ -55,6 +60,12 @@ module.exports = function (gulp, opts) {
     return {
         integration:  function (done) {
             runTest(opts.intTargetCode, opts.intTestCode, done);
+        },
+        api:  function (done) {
+            runTest(opts.intTargetCode, opts.apiTestCode, done);
+        },
+        external:  function (done) {
+            runTest(opts.intTargetCode, opts.extTestCode, done);
         },
         '': function (done) {
             runTest(opts.unitTargetCode, opts.unitTestCode, done);
