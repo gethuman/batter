@@ -92,7 +92,7 @@ module.exports = function (gulp, opts) {
         unit: function (done) {
             runTest(opts.unitTargetCode, opts.unitTestCode, done);
         },
-        '': ['unit']
+        '': ['test.unit']
     };
 };
 
