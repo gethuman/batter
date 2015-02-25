@@ -5,13 +5,12 @@
  *
  * Gulp task for clearing out the dist folder
  */
-var clean = require('gulp-clean');
+var del = require('del');
 
 module.exports = function (gulp, opts) {
     var distDir = opts.distDir || 'dist';
 
-    return function () {
-        return gulp.src(distDir + '/*')
-            .pipe(clean({ read: false}));
+    return function (done) {
+        del([distDir + '/*'], done);
     };
 };
