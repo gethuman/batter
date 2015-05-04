@@ -10,6 +10,6 @@ module.exports = function (gulp, opts) {
 
     return function () {
         //gulp.watch(watchCode, ['lint', 'test']);
-        gulp.watch(watchCode, []);
+        gulp.watch(watchCode, ['lint']);
     };
 };
