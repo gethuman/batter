@@ -5,9 +5,11 @@
  * Simple watch implementation
  */
 module.exports = function (gulp, opts) {
-    var watchCode = opts.watchCode || [].concat(opts.unitTestCode, opts.unitTargetCode);
+    //var watchCode = opts.watchCode || [].concat(opts.unitTestCode, opts.unitTargetCode);
+    var watchCode = opts.watchCode || [].concat(opts.unitTargetCode);
 
     return function () {
-        gulp.watch(watchCode, ['lint', 'test']);
+        //gulp.watch(watchCode, ['lint', 'test']);
+        gulp.watch(watchCode);
     };
 };
