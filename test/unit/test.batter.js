@@ -15,6 +15,9 @@ describe('UNIT ' + name, function () {
             var expected = {
                 rootDir: 'foo',
                 targetDir: 'blah',
+                tasksets: {
+                    default: ['lint', 'test']
+                },
                 require: 'choo',
                 unitTestCode: 'test/unit/**/*.js',
                 unitTargetCode: 'lib/**/*.js',
