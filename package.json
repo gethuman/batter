@@ -25,9 +25,9 @@
     "gulp-mocha": "^2.0.1",
     "lodash": "^3.8.0",
     "q": "^1.4.0",
-    "yargs": "^3.8.0"
+    "yargs": "^3.9.0"
   },
   "devDependencies": {
-    "taste": "^0.1.61"
+    "taste": "^0.1.62"
   }
 }
