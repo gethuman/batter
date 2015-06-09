@@ -20,14 +20,14 @@
   "dependencies": {
     "del": "^1.2.0",
     "gulp": "^3.9.0",
-    "gulp-istanbul": "^0.9.0",
+    "gulp-istanbul": "^0.10.0",
     "gulp-jshint": "^1.11.0",
-    "gulp-mocha": "^2.1.0",
+    "gulp-mocha": "^2.1.1",
     "lodash": "^3.9.3",
     "q": "^1.4.1",
     "yargs": "^3.10.0"
   },
   "devDependencies": {
-    "taste": "^0.1.66"
+    "taste": "^0.1.67"
   }
 }
