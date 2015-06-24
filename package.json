@@ -22,12 +22,12 @@
     "gulp": "^3.9.0",
     "gulp-istanbul": "^0.10.0",
     "gulp-jshint": "^1.11.0",
-    "gulp-mocha": "^2.1.1",
+    "gulp-mocha": "^2.1.2",
     "lodash": "^3.9.3",
     "q": "^1.4.1",
-    "yargs": "^3.11.0"
+    "yargs": "^3.12.0"
   },
   "devDependencies": {
-    "taste": "^0.1.70"
+    "taste": "^0.1.71"
   }
 }
