@@ -16,7 +16,7 @@ describe('UNIT ' + name, function () {
                 rootDir: 'foo',
                 targetDir: 'blah',
                 tasksets: {
-                    default: ['lint', 'test']
+                    'default': ['lint', 'test']
                 },
                 require: 'choo',
                 unitTestCode: 'test/unit/**/*.js',

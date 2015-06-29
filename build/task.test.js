@@ -80,13 +80,13 @@ module.exports = function (gulp, opts) {
     }
 
     return {
-        integration:  function (done) {
+        integration: function (done) {
             runTest(opts.intTargetCode, opts.intTestCode, done);
         },
-        api:  function (done) {
+        api: function (done) {
             runTest(opts.intTargetCode, opts.apiTestCode, done);
         },
-        external:  function (done) {
+        external: function (done) {
             runTest(opts.intTargetCode, opts.extTestCode, done);
         },
         unit: function (done) {

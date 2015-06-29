@@ -4,8 +4,7 @@
  *
  * Use jshint to lint the code
  */
-var jshint      = require('gulp-jshint');
-var jshintOpts  = require('./opts.jshint');
+var eslint = require('gulp-eslint');
 
 module.exports = function (gulp, opts) {
     var commonCode = ['build/*.js'];
@@ -14,7 +13,7 @@ module.exports = function (gulp, opts) {
 
     return function () {
         return gulp.src(lintCode)
-            .pipe(jshint(jshintOpts))
-            .pipe(jshint.reporter('default'));
+            .pipe(eslint())
+            .pipe(eslint.format());
     };
 };
