@@ -28,6 +28,6 @@
     "yargs": "^3.15.0"
   },
   "devDependencies": {
-    "taste": "^0.2.2"
+    "taste": "^0.2.3"
   }
 }
