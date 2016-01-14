@@ -23,11 +23,11 @@
     "gulp-eslint": "^1.1.1",
     "gulp-istanbul": "^0.10.3",
     "gulp-mocha": "^2.2.0",
-    "lodash": "^3.10.1",
+    "lodash": "^4.0.0",
     "q": "^1.4.1",
     "yargs": "^3.31.0"
   },
   "devDependencies": {
-    "taste": "^0.2.18"
+    "taste": "^0.2.19"
   }
 }
