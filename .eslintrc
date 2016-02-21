@@ -4,6 +4,9 @@
     "mocha": true,
     "node": true
   },
+  "globals": {
+    "angular": true
+  },
   "rules": {
     "comma-dangle": 0,
     "no-cond-assign": 2,
