@@ -21,13 +21,13 @@
     "del": "2.2.0",
     "gulp": "3.9.1",
     "gulp-eslint": "2.0.0",
-    "gulp-istanbul": "0.10.3",
+    "gulp-istanbul": "0.10.4",
     "gulp-mocha": "2.2.0",
-    "lodash": "4.7.0",
+    "lodash": "4.8.2",
     "q": "1.4.1",
-    "yargs": "4.3.2"
+    "yargs": "4.4.0"
   },
   "devDependencies": {
-    "taste": "0.2.28"
+    "taste": "0.2.29"
   }
 }
