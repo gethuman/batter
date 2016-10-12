@@ -18,16 +18,14 @@
   },
   "homepage": "https://github.com/gethuman/batter",
   "dependencies": {
-    "del": "2.2.2",
     "gulp": "3.9.1",
-    "gulp-eslint": "3.0.1",
-    "gulp-istanbul": "1.1.0",
-    "gulp-mocha": "3.0.1",
-    "lodash": "4.15.0",
-    "q": "1.4.1",
-    "yargs": "4.8.1"
+    "gulp-eslint": "^3.0.1",
+    "gulp-istanbul": "^1.1.1",
+    "gulp-mocha": "^3.0.1",
+    "lodash": "^4.16.4",
+    "yargs": "^6.0.0"
   },
   "devDependencies": {
-    "taste": "0.2.38"
+    "taste": "^0.2.39"
   }
 }
