@@ -1,6 +1,6 @@
 {
   "name": "batter",
-  "version": "0.1.51",
+  "version": "0.1.52",
   "description": "Build utilities to support pancakes libraries",
   "main": "lib/batter.js",
   "repository": {
